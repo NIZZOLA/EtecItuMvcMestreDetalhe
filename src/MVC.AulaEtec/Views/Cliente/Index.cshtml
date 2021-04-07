@@ -1,0 +1,86 @@
+﻿@model IEnumerable<MVC.AulaEtec.Models.ClienteModel>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Cadastro de Clientes</h1>
+
+<p>
+    <a asp-action="CreateFull">+ Novo <i class="bi bi-file-earmark-plus"></i> </a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeFantasia)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RazaoSocial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apelido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cnpj)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observacoes)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LogoAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CodigoExterno)
+            </th>
+            <th style="width:120px;">
+                Ações
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeFantasia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RazaoSocial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apelido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cnpj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Observacoes)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LogoAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoExterno)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ClienteId"><i class="bi bi-brush"></i></a> 
+                <a asp-action="Details" asp-route-id="@item.ClienteId"><i class="bi bi-zoom-in"></i></a> 
+                <a asp-action="Delete" asp-route-id="@item.ClienteId"><i class="bi bi-trash" title="Excluir"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,123 @@
+﻿@model MVC.AulaEtec.Models.ClienteModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Cadastro de Clientes</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.NomeFantasia)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.NomeFantasia)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.RazaoSocial)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RazaoSocial)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Apelido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Apelido)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Cnpj)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Cnpj)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IE)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IE)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Observacoes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Observacoes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LogoAddress)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LogoAddress)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.CodigoExterno)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CodigoExterno)
+        </dd>
+    </dl>
+
+    <hr />
+    <h2>Endereços do Cliente</h2>
+
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Rua</th>
+                    <th scope="col">Bairro</th>
+                    <th scope="col">Cidade</th>
+                    <th scope="col">Estado</th>
+                    <th style="width:120px;">
+                        Ações
+                    </th>
+                </tr>
+            </thead>
+
+
+            @foreach (var item in Model.Enderecos)
+            {
+                <tr>
+                    <td>
+                        @item.Rua
+                    </td>
+                    <td>
+                        @item.Bairro
+                    </td>
+                    <td>
+                        @item.Cidade
+                    </td>
+                    <td>
+                        @item.Estado
+                    </td>
+
+                    <td>
+                        <a asp-controller="ClienteEndereco" asp-action="Edit" asp-route-id="@item.ClienteEnderecoId"><i class="bi bi-brush"></i></a> 
+                        <a asp-controller="ClienteEndereco" asp-action="Details" asp-route-id="@item.ClienteEnderecoId"><i class="bi bi-zoom-in"></i></a> 
+                        <a asp-controller="ClienteEndereco" asp-action="Delete" asp-route-id="@item.ClienteEnderecoId"><i class="bi bi-trash"></i></a>
+                    </td>
+
+                </tr>
+            }
+        </table>
+
+    </div>
+
+</div>
+
+
+
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.ClienteId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

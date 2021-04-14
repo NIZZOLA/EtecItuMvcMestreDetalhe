@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC.AulaEtec", "MVC.AulaEtec\MVC.AulaEtec.csproj", "{A6E260D8-754C-4A87-8200-0CFD7774776F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVC.AulaEtec", "MVC.AulaEtec\MVC.AulaEtec.csproj", "{A6E260D8-754C-4A87-8200-0CFD7774776F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -20,7 +20,16 @@ namespace MVC.AulaEtec.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            
+            DashBoardListModel lista = new DashBoardListModel();
+
+            if (true)
+            {
+                DashBoardModel modelo = new DashBoardModel() { Data = DateTime.Now, Valor = 1500m };
+                lista.Valores.Add(modelo);
+            }
+
+            return View(lista);
         }
 
         public IActionResult Privacy()

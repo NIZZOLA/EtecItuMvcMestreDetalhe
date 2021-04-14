@@ -61,7 +61,5 @@ namespace MVC.AulaEtec.ViewModel
 
         public bool Padrao { get; set; }
         #endregion 
-
-
     }
 }
